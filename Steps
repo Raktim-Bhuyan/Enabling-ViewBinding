@@ -1,0 +1,23 @@
+Go to build.gradle (Module : - app)
+Inside android{} , just after testInstrumentationRunner , enable ViewBinding to true by :
+buildFeatures{
+  viewBinding true
+}
+Then synchronize the gradle file by clicking "Sync Now" at the top right
+Then create an id , in your view of Xml file , which you want to access in your XActivity.kt
+Now go to XActivity.kt
+inside class XActivitydo the following modifications: //X is the name of the Activity
+
+class XActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityXBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding= ActivitXBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+   
+   Then happily access the id by using  binding.idname
+   
+   
+   
+   
+   
